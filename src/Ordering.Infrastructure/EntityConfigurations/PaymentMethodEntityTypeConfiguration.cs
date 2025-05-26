@@ -1,6 +1,6 @@
 ﻿namespace eShop.Ordering.Infrastructure.EntityConfigurations;
 
-class PaymentMethodEntityTypeConfiguration
+public class PaymentMethodEntityTypeConfiguration
     : IEntityTypeConfiguration<PaymentMethod>
 {
     public void Configure(EntityTypeBuilder<PaymentMethod> paymentConfiguration)
