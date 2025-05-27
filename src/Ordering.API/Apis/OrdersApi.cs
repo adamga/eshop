@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.AspNetCore.Authorization;
 using CardType = eShop.Ordering.API.Application.Queries.CardType;
 using Order = eShop.Ordering.API.Application.Queries.Order;
 
@@ -15,8 +16,16 @@ public static class OrdersApi
         api.MapGet("/cardtypes", GetCardTypesAsync);
         api.MapPost("/draft", CreateOrderDraftAsync);
         api.MapPost("/", CreateOrderAsync);
+        api.MapGet("/admin-only", GetAdminOnly); // Register admin-only endpoint
 
         return api;
+    }
+
+    // Add this endpoint for PCI compliance testing
+    [Authorize(Roles = "Admin")]
+    public static IResult GetAdminOnly()
+    {
+        return Results.Ok("Admin access granted.");
     }
 
     public static async Task<Results<Ok, BadRequest<string>, ProblemHttpResult>> CancelOrderAsync(
