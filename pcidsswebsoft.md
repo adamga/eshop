@@ -19,113 +19,7 @@ May 2023
 | October 2022 | 1.2 | Update from v1.1. See _PCI Software Security Framework – Summary of Changes from Secure Software Requirements and Assessment Procedures Version 1.1 to 1.2_ for details of changes. |
 | May 2023 | 1.2.1 | Update from v1.2 to address errata. |
 
-## Table of Contents
 
-Introduction ..................................................................................................................................................................................................................... 6
-
-Terminology ................................................................................................................................................................................................................ 6
-
-Related Publications ................................................................................................................................................................................................... 7
-
-Stakeholder Roles and Responsibilities ..................................................................................................................................................................... 8
-
-Overview of PCI Secure Standard ................................................................................................................................................................................ 10
-
-Scope of Security Requirements .............................................................................................................................................................................. 10
-
-Requirement Modules ............................................................................................................................................................................................... 11
-
-Requirement Module Applicability ........................................................................................................................................................................ 11
-
-Objective-Based Approach to Requirements............................................................................................................................................................ 12
-
-Requirement Frequency and Rigor....................................................................................................................................................................... 12
-
-Requirement Structure .............................................................................................................................................................................................. 12
-
-Testing Methods........................................................................................................................................................................................................ 13
-
-Reliance on Third-Party Testing ........................................................................................................................................................................... 14
-
-Use of Sampling .................................................................................................................................................................................................... 14
-
-Use of a Test Platform .......................................................................................................................................................................................... 15
-
-Core Requirements ....................................................................................................................................................................................................... 16
-
-Minimizing the Attack Surface................................................................................................................................................................................... 16
-
-Control Objective 1: Critical Asset Identification ................................................................................................................................................... 16
-
-Control Objective 2: Secure Defaults.................................................................................................................................................................... 19
-
-Control Objective 3: Sensitive Data Retention ..................................................................................................................................................... 25
-
-Software Protection Mechanisms ............................................................................................................................................................................. 32
-
-Control Objective 4: Critical Asset Protection ....................................................................................................................................................... 32
-
-Control Objective 5: Authentication and Access Control ...................................................................................................................................... 35
-
-Control Objective 6: Sensitive Data Protection..................................................................................................................................................... 39 Control Objective 7: Use of Cryptography ............................................................................................................................................................ 42
-
-Secure Software Operations ..................................................................................................................................................................................... 49
-
-Control Objective 8: Activity Tracking ................................................................................................................................................................... 49
-
-Control Objective 9: Attack Detection ................................................................................................................................................................... 53
-
-Secure Software Lifecycle Management .................................................................................................................................................................. 55
-
-Control Objective 10: Threat and Vulnerability Management ............................................................................................................................... 55
-
-Control Objective 11: Secure Software Updates .................................................................................................................................................. 57
-
-Control Objective 12: Software Vendor Implementation Guidance ...................................................................................................................... 59
-
-Module A – Account Data Protection Requirements .................................................................................................................................................... 61
-
-Purpose and Scope................................................................................................................................................................................................... 61
-
-Security Requirements .............................................................................................................................................................................................. 63
-
-Control Objective A.1: Sensitive Authentication Data .......................................................................................................................................... 63
-
-Control Objective A.2: Cardholder Data Protection .............................................................................................................................................. 64
-
-Module B – Terminal Software Requirements .............................................................................................................................................................. 67
-
-Purpose and Scope................................................................................................................................................................................................... 67
-
-Background ............................................................................................................................................................................................................... 67
-
-Considerations .......................................................................................................................................................................................................... 68
-
-Security Requirements .............................................................................................................................................................................................. 69
-
-Control Objective B.1: Terminal Software Documentation ................................................................................................................................... 69
-
-Control Objective B.2: Terminal Software Design ................................................................................................................................................ 71
-
-Control Objective B.3: Terminal Software Attack Mitigation ................................................................................................................................. 79
-
-Control Objective B.4: Terminal Software Security Testing ................................................................................................................................. 83
-
-Control Objective B.5: Terminal Software Implementation Guidance .................................................................................................................. 85
-
-Module C – Web Software Requirements .................................................................................................................................................................... 87
-
-Purpose and Scope................................................................................................................................................................................................... 87
-
-Considerations .......................................................................................................................................................................................................... 87 Security Requirements .............................................................................................................................................................................................. 88
-
-Control Objective C.1: Web Software Components & Services ........................................................................................................................... 88
-
-Control Objective C.2: Web Software Access Controls ........................................................................................................................................ 93
-
-Control Objective C.3: Web Software Attack Mitigation ..................................................................................................................................... 100
-
-Control Objective C.4: Web Software Communications ..................................................................................................................................... 109
 
 ## Introduction
 
@@ -135,28 +29,6 @@ _Requirements and Assessment Procedures_ (hereafter referred to as the “PCI Se
 
 The _PCI Secure Software Standard_ is intended for use as part of the PCI Software Security Framework (SSF). Entities wishing to have their payment software validated under the PCI SSF would do so to this standard.
 
-### Terminology
-
-A list of applicable terms and definitions is provided in the _PCI Software Security Framework Glossary of Terms, Abbreviations, and Acronyms,_ available in the PCI SSC Document Library: [https://www.pcisecuritystandards.org/document_library/.](https://www.pcisecuritystandards.org/document_library/)
-
-Additionally, definitions for general PCI terminology is provided in the PCI Glossary on the PCI SSC website at: [https://www.pcisecuritystandards.org/pci_security/glossary/.](https://www.pcisecuritystandards.org/pci_security/glossary/)
-
-### Related Publications
-
-In addition to the security requirements and assessment procedures for payment software defined in this standard, there are additional documents available to support the use of this standard. For more information, refer to the latest versions of (or successor documents to) the following PCI SSC publications in the PCI SSC Document Library:
-
-| **Document Name** | **Description** |
-| --- | --- |
-| _PCI Software Security Framework – Technical FAQs for Secure Software_<br><br>_Standard_ (“Secure Software Technical FAQs”) | Technical Frequently Asked Questions (FAQs) provide a mechanism to address questions related to the interpretation and application of the associated PCI Standard and Program. Technical FAQs are considered ‘normative,’ and they must be fully considered within the scope of assessment activity for the associated Standard. |
-| _PCI Software Security Framework – PCI Secure Software Lifecycle Standard_<br><br>(“Secure SLC Standard”) | Additional security requirements for software development organizations to ensure they develop and maintain software securely throughout the entire software lifecycle. |
-| _PCI Software Security Framework – Glossary of Terms, Abbreviations, and_<br><br>_Acronyms_ (“SSF Glossary”) | Describes important terms, abbreviations, and acronyms used throughout the Secure Software Standard and supporting documentation. |
-| _PCI Software Security Framework – Secure Software Program Guide_<br><br>(“Secure Software Program Guide”) | Describes the program requirements for entities to validate their payment software for compliance to the Secure Software Standard and have their software listed and maintained on the PCI SSC’s List of Validated Payment Software. |
-| _PCI Software Security Framework – Secure Software Template for Report on_<br><br>_Validation_ (“Secure Software ROV Reporting Template”) | The mandatory template that qualified SSF Assessors must use to document the results of a Secure Software Assessment and report those results to PCI SSC. |
-| _PCI Software Security Framework – Secure Software Attestation of Validation_<br><br>(“Secure Software AOV”) | A template document provided by PCI SSC that Secure Software Assessor Companies and Vendors must use to attest to the results of a Secure Software Assessment. |
-| _PCI Software Security Framework – Qualification Requirements for Assessors_<br><br>(“SSF Qualification Requirements”) | Describes the minimum capability and related documentation requirements that SSF Assessor Companies and their Assessor-Employees must satisfy to be qualified to perform Secure Software Assessments. |
-| _PCI PIN Transaction Security (PTS) Point-of-Interaction (POI) Modular_<br><br>_Security Requirements_ (“PCI PTS POI Standard") | Security requirements that must be met for payment acceptance devices to obtain Payment Card Industry (PCI) PIN Transaction Security (PTS) Point of Interaction (POI) device approval. |
-| **Document Name** | **Description** |
-| _Vendor Release Agreement_ (“VRA”) | Establishes the terms and conditions that Vendors of Validated Payment Software must meet to participate in PCI Programs. |
 
 ### Stakeholder Roles and Responsibilities
 
@@ -234,9 +106,7 @@ The PCI Secure Software Standard includes the concept of requirement “modules,
 
 The requirements in this standard are organized into the following four requirement modules:
 
-- **Core Requirements (“Core Module”)**: General security requirements that apply to all types of payment software regardless of software function, design, or underlying technology.
-- **Module A – Account Data Protection Requirements (“Account Data Protection Module”)**: Additional security requirements for payment software that store, process, or transmit account data.
-- **Module B – Terminal Software Requirements (“Terminal Software Module”)**: Additional security requirements for payment software specifically designed for deployment and operation on PCI-approved POI devices.
+
 - **Module C – Web Software Requirements (“Web Software Module”)**: Additional security requirements for payment software that uses Internet technologies, protocols, and languages to initiate or support electronic payment transactions.
 
 #### Requirement Module Applicability
@@ -265,37 +135,7 @@ The security requirements defined in this standard are as follows:
 - **Test Requirements** – The expected assessment activities to be performed by an assessor to determine whether a specific control objective has been met. Test requirements are intended to provide both the software vendor and assessor with a common understanding of the tasks expected to be carried out by the assessor during testing. The specific method(s) used, the item(s) examined, and the personnel interviewed must be appropriate for the control objective being validated and for the software being assessed.
 - **Guidance** – Additional information to help payment software vendors and assessors understand the intent of each control objective. The guidance may also include best practices that should be considered and examples of controls or methods that may be used to satisfy the control objective. Guidance is not intended to preclude other methods that a software vendor may use to meet a control objective, nor does it replace or amend the control objective to which it refers.
 
-### Testing Methods
 
-To support the validation of their software to the requirements in this standard, software vendors are expected to produce evidence that they have satisfied the stated control objectives. The test requirements identified for each control objective describe the activities to be performed by the assessor to confirm that the software and/or software vendor have met the control objective(s). Test requirements include the following testing activities:
-
-- **Examine**: The assessor critically evaluates data evidence. Common examples include software design and architecture documents (electronic or physical), source code, configuration and metadata files, bug tracking data and other output from software development systems, and security-testing results. The choice of evidence that may be used to meet an “examination” requirement is deliberately left open for the tester to determine. However, it is a requirement of this standard that the software source code be made available for review as part of the assessment. It is not acceptable for an assessment report to be provided where no source code was examined or used in the process of performing the testing.
-- **Interview**: The assessor converses with individual personnel. The purposes of interviews include determining how an activity is performed, whether an activity is performed as defined, and whether personnel have particular knowledge or understanding of applicable policies, processes, responsibilities, or concepts.
-- **Test:** The assessor evaluates the software operation to analyze its characteristics and behavior in various scenarios. Unless otherwise stated, software “testing” must include functional testing using forensic tools and techniques. Examples of such tools and techniques include the use of automated static analysis security testing (SAST), dynamic analysis security testing (DAST), interactive application security testing (IAST), and software composition analysis (SCA) tools. Where adversarial testing is explicitly referenced, fuzzing and other penetration testing tools and techniques must be used to try and bypass software security controls or to cause the software to behave in unintended ways.
-
-The specific items or processes to be examined or tested, and the personnel to be interviewed should be appropriate for the control objective being validated and for each entity’s organizational structure, culture, business practices, and software products. It is at the discretion of the assessor to determine the suitability or adequacy of the evidence provided by the entity to support each test requirement. Where bullets are specified in a control objective or test requirement, each bullet is expected to be validated as part of the assessment.
-
-When documenting the assessment results, the assessor identifies the testing activities performed and the result of each activity. While it is expected that an assessor performs all test requirements defined for each control objective, it may also be possible for a control objective to be validated using different or additional testing methods. In such cases, the assessor is expected to document why alternative testing methods were used and how those methods provide at least the same level of assurance as the stated test requirements. Where terms such as “periodic,” “appropriate,” and “reasonable” are used in the test requirement, it is the software providers responsibility to define and defend its decisions regarding the frequency, robustness, and maturity of the implemented controls or processes.
-
-#### Reliance on Third-Party Testing
-
-All test requirements are expected to be performed by the assessor. An assessor may choose, however, to rely on testing performed by a thirdparty to satisfy a test requirement, including the software provider. The assessor retains full responsibility for the testing activities and results, regardless of whether the testing is performed by the assessor, by the software provider, or by a third-party. Where third-party testing is relied upon by the assessor, the assessor must document and justify the following:
-
-▪ How the evidence provided by the third-party supports the same level of rigor as testing performed by the assessor, and ▪ How the assessor verified that the third-party testing relied upon by the assessor is appropriate.
-
-Where an assessed entity’s testing is to be used for the purposes of satisfying test requirements, the assessor must first verify the software vendor is Secure SLC-qualified<sup><sup>[\[1\]](#footnote-1)</sup></sup> before software vendor testing can be relied upon.
-
-#### Use of Sampling
-
-Where appropriate, the assessor may utilize sampling as part of the testing process in accordance with a documented sampling methodology. The assessor’s sampling methodology must detail how samples are chosen and must be provided to PCI SSC upon submission of the Report on Validation (ROV).
-
-Sample selection must include a representative sample of all people, processes, and technologies in scope for the PCI Secure Software assessment. Sample sizes must be sufficiently large to demonstrate that the sample accurately reflects the characteristics of the larger population.
-
-In instances where the assessor’s findings are based on a representative sample rather than the complete set of applicable items, the assessor must explicitly note this fact in the ROV, detail the items chosen as samples for the testing, and provide references to the applicable sections of the assessor’s sampling methodology provided with the ROV. Where the assessor selects samples that do not align with the assessor’s documented sampling methodology, the assessor must provide justification in the ROV for each instance where such samples are used.
-
-#### Use of a Test Platform
-
-To ensure that software testing complies with this standard, it may be necessary for the software vendor to provide a test platform. A test platform is special test functionality that is either separate or absent from production-level code. The test platform must rely on as much of the intended production-level functionality as possible. The test platform serves only to provide a test framework that allows for software functionality to be exercised outside of a production-level deployment environment to verify the software’s compliance to this standard. For example, elevated privileges or access capabilities may need to be granted for the purpose of providing run-time visibility into various facets of the software operation. Other examples include providing a test function to initiate a test transaction or to perform authentication functions. It is at the assessor’s discretion to request any test functionality deemed necessary to verify the software’s compliance with applicable requirements in this standard.
 
 ## Module C – Web Software Requirements
 
