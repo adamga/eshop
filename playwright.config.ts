@@ -22,8 +22,8 @@ export default defineConfig({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
-    baseURL: 'http://localhost:5045',
-
+    baseURL: 'https://localhost:7298',
+    ignoreHTTPSErrors: true, // Allow self-signed certs for local dev
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
     ...devices['Desktop Chrome'],
@@ -82,14 +82,4 @@ export default defineConfig({
     //   use: { ...devices['Desktop Chrome'], channel: 'chrome' },
     // },
   ],
-
-  /* Run your local dev server before starting the tests */
-  webServer: {
-    command: 'dotnet run --project src/eShop.AppHost/eShop.AppHost.csproj',
-    url: 'http://localhost:5045',
-    reuseExistingServer: !process.env.CI,
-    stderr: 'pipe',
-    stdout: 'pipe',
-    timeout: process.env.CI ? (5 * 60_000) : 60_000,
-  },
 });

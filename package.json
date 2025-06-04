@@ -5,13 +5,17 @@
   "directories": {
     "test": "tests"
   },
-  "scripts": {},
+  "scripts": {
+    "pretest:e2e": "pwsh ./kill-port-19888.ps1",
+    "test:e2e": "npx playwright test",
+    "e2e": "pwsh ./run-e2e.ps1"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@playwright/test": "^1.42.1",
     "@types/node": "^20.11.25",
-    "dotenv": "^16.4.5"
+    "dotenv": "^16.5.0"
   }
 }

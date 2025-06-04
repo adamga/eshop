@@ -1,0 +1,18 @@
+Project 'WebAppComponents' has the following package references
+   [net9.0]: 
+   Top-level Package                          Requested   Resolved
+   > Microsoft.AspNetCore.Components.Web      9.0.5       9.0.5   
+
+   Transitive Package                                           Resolved
+   > Microsoft.AspNetCore.Authorization                         9.0.5   
+   > Microsoft.AspNetCore.Components                            9.0.5   
+   > Microsoft.AspNetCore.Components.Analyzers                  9.0.5   
+   > Microsoft.AspNetCore.Components.Forms                      9.0.5   
+   > Microsoft.AspNetCore.Metadata                              9.0.5   
+   > Microsoft.Extensions.DependencyInjection                   9.0.5   
+   > Microsoft.Extensions.DependencyInjection.Abstractions      9.0.5   
+   > Microsoft.Extensions.Logging.Abstractions                  9.0.5   
+   > Microsoft.Extensions.Options                               9.0.5   
+   > Microsoft.Extensions.Primitives                            9.0.5   
+   > Microsoft.JSInterop                                        9.0.5   
+

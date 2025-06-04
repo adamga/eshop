@@ -1,0 +1,451 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<bom xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" serialNumber="urn:uuid:ed0524d9-b620-47aa-8cc6-533d05ba6adc" version="1" xmlns="http://cyclonedx.org/schema/bom/1.6">
+  <metadata>
+    <timestamp>2025-06-02T18:12:01.8551411Z</timestamp>
+    <tools>
+      <tool>
+        <vendor>CycloneDX</vendor>
+        <name>CycloneDX module for .NET</name>
+        <version>5.2.0.0</version>
+      </tool>
+    </tools>
+    <component type="application" bom-ref="WebAppComponents@0.0.0">
+      <name>WebAppComponents</name>
+      <version>0.0.0</version>
+    </component>
+  </metadata>
+  <components>
+    <component type="library" bom-ref="pkg:nuget/Microsoft.AspNetCore.Authorization@9.0.5">
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
+      <name>Microsoft.AspNetCore.Authorization</name>
+      <version>9.0.5</version>
+      <description>ASP.NET Core authorization classes.
+Commonly used types:
+Microsoft.AspNetCore.Authorization.AllowAnonymousAttribute
+Microsoft.AspNetCore.Authorization.AuthorizeAttribute
+
+This package was built from the source code at https://github.com/dotnet/aspnetcore/tree/ed74665e773dd1ebea3289c5662d71c590305932</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="SHA-512">770A97DADBFF77A7FBEE0449C97EB4E28155F1C0C80E9941F00C15C8E751A4C3654BA35F2C1E0AFDB87D208BF06EA29244D1A0A04A625830B596622ADB4304DB</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>MIT</id>
+        </license>
+      </licenses>
+      <copyright>© Microsoft Corporation. All rights reserved.</copyright>
+      <purl>pkg:nuget/Microsoft.AspNetCore.Authorization@9.0.5</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>https://asp.net/</url>
+        </reference>
+        <reference type="vcs">
+          <url>https://github.com/dotnet/aspnetcore</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:nuget/Microsoft.AspNetCore.Components@9.0.5">
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
+      <name>Microsoft.AspNetCore.Components</name>
+      <version>9.0.5</version>
+      <description>Components feature for ASP.NET Core.
+
+This package was built from the source code at https://github.com/dotnet/aspnetcore/tree/ed74665e773dd1ebea3289c5662d71c590305932</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="SHA-512">E428411E028FC0C097C01D085D8EA27EF011E1EA029E50D81AF61264B6C75A37A532EB0670E54A67FAFB4510F48B44A8C771ED492455E925D45DA1CD95D7B687</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>MIT</id>
+        </license>
+      </licenses>
+      <copyright>© Microsoft Corporation. All rights reserved.</copyright>
+      <purl>pkg:nuget/Microsoft.AspNetCore.Components@9.0.5</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>https://asp.net/</url>
+        </reference>
+        <reference type="vcs">
+          <url>https://github.com/dotnet/aspnetcore</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:nuget/Microsoft.AspNetCore.Components.Analyzers@9.0.5">
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
+      <name>Microsoft.AspNetCore.Components.Analyzers</name>
+      <version>9.0.5</version>
+      <description>Roslyn analyzers for ASP.NET Core Components.
+
+This package was built from the source code at https://github.com/dotnet/aspnetcore/tree/ed74665e773dd1ebea3289c5662d71c590305932</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="SHA-512">68096E6926448217CD593BE45945B7F4C5746DCD3DA00655A8843F884C03121578E23E7893FB31FA31E36DE177163CC6929227F13419005FECE8CAF8CEAA706C</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>MIT</id>
+        </license>
+      </licenses>
+      <copyright>© Microsoft Corporation. All rights reserved.</copyright>
+      <purl>pkg:nuget/Microsoft.AspNetCore.Components.Analyzers@9.0.5</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>https://asp.net/</url>
+        </reference>
+        <reference type="vcs">
+          <url>https://github.com/dotnet/aspnetcore</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:nuget/Microsoft.AspNetCore.Components.Forms@9.0.5">
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
+      <name>Microsoft.AspNetCore.Components.Forms</name>
+      <version>9.0.5</version>
+      <description>Forms and validation support for Blazor applications.
+
+This package was built from the source code at https://github.com/dotnet/aspnetcore/tree/ed74665e773dd1ebea3289c5662d71c590305932</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="SHA-512">E293FDFB0D3F0111F239888153A87E78BB63864B3F737D98886104B6E0C4BA065650378F1823AD1E8797C0A7F4872A38396ADF79778D2420944C8CD07387ADC3</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>MIT</id>
+        </license>
+      </licenses>
+      <copyright>© Microsoft Corporation. All rights reserved.</copyright>
+      <purl>pkg:nuget/Microsoft.AspNetCore.Components.Forms@9.0.5</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>https://asp.net/</url>
+        </reference>
+        <reference type="vcs">
+          <url>https://github.com/dotnet/aspnetcore</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:nuget/Microsoft.AspNetCore.Components.Web@9.0.5">
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
+      <name>Microsoft.AspNetCore.Components.Web</name>
+      <version>9.0.5</version>
+      <description>Support for rendering ASP.NET Core components for browsers.
+
+This package was built from the source code at https://github.com/dotnet/aspnetcore/tree/ed74665e773dd1ebea3289c5662d71c590305932</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="SHA-512">76EA29DE207A9CB1686446097CFDDBE157C23C82B78D3D6E1B4E283D57B374D7FB9ACCB0BBBD9AD9E83B1FEF62B6FAD7FC8857D996442B802961597D35DBD7B2</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>MIT</id>
+        </license>
+      </licenses>
+      <copyright>© Microsoft Corporation. All rights reserved.</copyright>
+      <purl>pkg:nuget/Microsoft.AspNetCore.Components.Web@9.0.5</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>https://asp.net/</url>
+        </reference>
+        <reference type="vcs">
+          <url>https://github.com/dotnet/aspnetcore</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:nuget/Microsoft.AspNetCore.Metadata@9.0.5">
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
+      <name>Microsoft.AspNetCore.Metadata</name>
+      <version>9.0.5</version>
+      <description>ASP.NET Core metadata.
+
+This package was built from the source code at https://github.com/dotnet/aspnetcore/tree/ed74665e773dd1ebea3289c5662d71c590305932</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="SHA-512">BA891EE01134F3D8B687891F6BDDFE7085531A4C9F18BE0652B327F2557D1B461623B8089FA174E2A38CE84472BB919D5CC6B5D360282D4F8512C3545165BFFB</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>MIT</id>
+        </license>
+      </licenses>
+      <copyright>© Microsoft Corporation. All rights reserved.</copyright>
+      <purl>pkg:nuget/Microsoft.AspNetCore.Metadata@9.0.5</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>https://asp.net/</url>
+        </reference>
+        <reference type="vcs">
+          <url>https://github.com/dotnet/aspnetcore</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:nuget/Microsoft.Extensions.DependencyInjection@9.0.5">
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
+      <name>Microsoft.Extensions.DependencyInjection</name>
+      <version>9.0.5</version>
+      <description>Default implementation of dependency injection for Microsoft.Extensions.DependencyInjection.</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="SHA-512">D277883AC45F98B33EB9B8047575035B81B5B9165639B395F7584B6FF698DDAE0346FE103BE419230EA792649DAF9B2B196246F502513D28C7748C0AE72AF562</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>MIT</id>
+        </license>
+      </licenses>
+      <copyright>© Microsoft Corporation. All rights reserved.</copyright>
+      <purl>pkg:nuget/Microsoft.Extensions.DependencyInjection@9.0.5</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>https://dot.net/</url>
+        </reference>
+        <reference type="vcs">
+          <url>https://github.com/dotnet/runtime</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:nuget/Microsoft.Extensions.DependencyInjection.Abstractions@9.0.5">
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
+      <name>Microsoft.Extensions.DependencyInjection.Abstractions</name>
+      <version>9.0.5</version>
+      <description>Abstractions for dependency injection.
+
+Commonly Used Types:
+Microsoft.Extensions.DependencyInjection.IServiceCollection</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="SHA-512">A74106E0E0348D58D98799B875D52E4D9D3AEED7CA443BA00776E807D48C3BE7CE22C22A5D7188F1459BB046F720572A16119B6A69FE411723070D714C4470B9</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>MIT</id>
+        </license>
+      </licenses>
+      <copyright>© Microsoft Corporation. All rights reserved.</copyright>
+      <purl>pkg:nuget/Microsoft.Extensions.DependencyInjection.Abstractions@9.0.5</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>https://dot.net/</url>
+        </reference>
+        <reference type="vcs">
+          <url>https://github.com/dotnet/runtime</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:nuget/Microsoft.Extensions.Logging.Abstractions@9.0.5">
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
+      <name>Microsoft.Extensions.Logging.Abstractions</name>
+      <version>9.0.5</version>
+      <description>Logging abstractions for Microsoft.Extensions.Logging.
+
+Commonly Used Types:
+Microsoft.Extensions.Logging.ILogger
+Microsoft.Extensions.Logging.ILoggerFactory
+Microsoft.Extensions.Logging.ILogger&lt;TCategoryName&gt;
+Microsoft.Extensions.Logging.LogLevel
+Microsoft.Extensions.Logging.Logger&lt;T&gt;
+Microsoft.Extensions.Logging.LoggerMessage
+Microsoft.Extensions.Logging.Abstractions.NullLogger</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="SHA-512">EA816EA1DCB43DE55D6A2708D8A1B95EDDAB8613A7D1A0028EA12EA97B8A2DDECE578FB1752AE68A0973975FEB9C57469231B86D2574E94699AFB240E09E9346</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>MIT</id>
+        </license>
+      </licenses>
+      <copyright>© Microsoft Corporation. All rights reserved.</copyright>
+      <purl>pkg:nuget/Microsoft.Extensions.Logging.Abstractions@9.0.5</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>https://dot.net/</url>
+        </reference>
+        <reference type="vcs">
+          <url>https://github.com/dotnet/runtime</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:nuget/Microsoft.Extensions.Options@9.0.5">
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
+      <name>Microsoft.Extensions.Options</name>
+      <version>9.0.5</version>
+      <description>Provides a strongly typed way of specifying and accessing settings using dependency injection.</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="SHA-512">113D9D09FE914619AC76EDC11592DAAE21FA315813E9A9A0EAC05A57DFFFD0F425B0F052EFCAF98FA269D6A5CEE0A5E85EAF34A7AE9CA5785B88F7511A7B4492</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>MIT</id>
+        </license>
+      </licenses>
+      <copyright>© Microsoft Corporation. All rights reserved.</copyright>
+      <purl>pkg:nuget/Microsoft.Extensions.Options@9.0.5</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>https://dot.net/</url>
+        </reference>
+        <reference type="vcs">
+          <url>https://github.com/dotnet/runtime</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:nuget/Microsoft.Extensions.Primitives@9.0.5">
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
+      <name>Microsoft.Extensions.Primitives</name>
+      <version>9.0.5</version>
+      <description>Primitives shared by framework extensions. Commonly used types include:
+
+Commonly Used Types:
+Microsoft.Extensions.Primitives.IChangeToken
+Microsoft.Extensions.Primitives.StringValues
+Microsoft.Extensions.Primitives.StringSegment</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="SHA-512">74CB1005B2FAEA1DF59B1D592FBD2F949708B0A0CBFE4C4A4B10FFFB4BEFA6D61830D9AB3542187F0A71118B0519C04D1450DB003AC62294CEEAD7CB080E7C4A</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>MIT</id>
+        </license>
+      </licenses>
+      <copyright>© Microsoft Corporation. All rights reserved.</copyright>
+      <purl>pkg:nuget/Microsoft.Extensions.Primitives@9.0.5</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>https://dot.net/</url>
+        </reference>
+        <reference type="vcs">
+          <url>https://github.com/dotnet/runtime</url>
+        </reference>
+      </externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:nuget/Microsoft.JSInterop@9.0.5">
+      <authors>
+        <author>
+          <name>Microsoft</name>
+        </author>
+      </authors>
+      <name>Microsoft.JSInterop</name>
+      <version>9.0.5</version>
+      <description>Abstractions and features for interop between .NET and JavaScript code.
+
+This package was built from the source code at https://github.com/dotnet/aspnetcore/tree/ed74665e773dd1ebea3289c5662d71c590305932</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="SHA-512">C2EDF7E1709EB4F22E0EC43354261909A8D91B95F6D2AA84D552808424074B5E36445E3F0E4AE467D7BDDBF6B8709F269193783809B8F732E9C13F33A2208C43</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>MIT</id>
+        </license>
+      </licenses>
+      <copyright>© Microsoft Corporation. All rights reserved.</copyright>
+      <purl>pkg:nuget/Microsoft.JSInterop@9.0.5</purl>
+      <externalReferences>
+        <reference type="website">
+          <url>https://asp.net/</url>
+        </reference>
+        <reference type="vcs">
+          <url>https://github.com/dotnet/aspnetcore</url>
+        </reference>
+      </externalReferences>
+    </component>
+  </components>
+  <dependencies>
+    <dependency ref="pkg:nuget/Microsoft.AspNetCore.Authorization@9.0.5">
+      <dependency ref="pkg:nuget/Microsoft.AspNetCore.Metadata@9.0.5" />
+      <dependency ref="pkg:nuget/Microsoft.Extensions.Logging.Abstractions@9.0.5" />
+      <dependency ref="pkg:nuget/Microsoft.Extensions.Options@9.0.5" />
+    </dependency>
+    <dependency ref="pkg:nuget/Microsoft.AspNetCore.Components.Analyzers@9.0.5" />
+    <dependency ref="pkg:nuget/Microsoft.AspNetCore.Components.Forms@9.0.5">
+      <dependency ref="pkg:nuget/Microsoft.AspNetCore.Components@9.0.5" />
+    </dependency>
+    <dependency ref="pkg:nuget/Microsoft.AspNetCore.Components.Web@9.0.5">
+      <dependency ref="pkg:nuget/Microsoft.AspNetCore.Components@9.0.5" />
+      <dependency ref="pkg:nuget/Microsoft.AspNetCore.Components.Forms@9.0.5" />
+      <dependency ref="pkg:nuget/Microsoft.Extensions.DependencyInjection@9.0.5" />
+      <dependency ref="pkg:nuget/Microsoft.Extensions.Primitives@9.0.5" />
+      <dependency ref="pkg:nuget/Microsoft.JSInterop@9.0.5" />
+    </dependency>
+    <dependency ref="pkg:nuget/Microsoft.AspNetCore.Components@9.0.5">
+      <dependency ref="pkg:nuget/Microsoft.AspNetCore.Authorization@9.0.5" />
+      <dependency ref="pkg:nuget/Microsoft.AspNetCore.Components.Analyzers@9.0.5" />
+    </dependency>
+    <dependency ref="pkg:nuget/Microsoft.AspNetCore.Metadata@9.0.5" />
+    <dependency ref="pkg:nuget/Microsoft.Extensions.DependencyInjection.Abstractions@9.0.5" />
+    <dependency ref="pkg:nuget/Microsoft.Extensions.DependencyInjection@9.0.5">
+      <dependency ref="pkg:nuget/Microsoft.Extensions.DependencyInjection.Abstractions@9.0.5" />
+    </dependency>
+    <dependency ref="pkg:nuget/Microsoft.Extensions.Logging.Abstractions@9.0.5">
+      <dependency ref="pkg:nuget/Microsoft.Extensions.DependencyInjection.Abstractions@9.0.5" />
+    </dependency>
+    <dependency ref="pkg:nuget/Microsoft.Extensions.Options@9.0.5">
+      <dependency ref="pkg:nuget/Microsoft.Extensions.DependencyInjection.Abstractions@9.0.5" />
+      <dependency ref="pkg:nuget/Microsoft.Extensions.Primitives@9.0.5" />
+    </dependency>
+    <dependency ref="pkg:nuget/Microsoft.Extensions.Primitives@9.0.5" />
+    <dependency ref="pkg:nuget/Microsoft.JSInterop@9.0.5" />
+    <dependency ref="WebAppComponents@0.0.0">
+      <dependency ref="pkg:nuget/Microsoft.AspNetCore.Authorization@9.0.5" />
+      <dependency ref="pkg:nuget/Microsoft.AspNetCore.Components@9.0.5" />
+      <dependency ref="pkg:nuget/Microsoft.AspNetCore.Components.Analyzers@9.0.5" />
+      <dependency ref="pkg:nuget/Microsoft.AspNetCore.Components.Forms@9.0.5" />
+      <dependency ref="pkg:nuget/Microsoft.AspNetCore.Components.Web@9.0.5" />
+      <dependency ref="pkg:nuget/Microsoft.AspNetCore.Metadata@9.0.5" />
+      <dependency ref="pkg:nuget/Microsoft.Extensions.DependencyInjection@9.0.5" />
+      <dependency ref="pkg:nuget/Microsoft.Extensions.DependencyInjection.Abstractions@9.0.5" />
+      <dependency ref="pkg:nuget/Microsoft.Extensions.Logging.Abstractions@9.0.5" />
+      <dependency ref="pkg:nuget/Microsoft.Extensions.Options@9.0.5" />
+      <dependency ref="pkg:nuget/Microsoft.Extensions.Primitives@9.0.5" />
+      <dependency ref="pkg:nuget/Microsoft.JSInterop@9.0.5" />
+    </dependency>
+  </dependencies>
+</bom>
