@@ -1,5 +1,9 @@
 import { test, expect } from '@playwright/test';
 
+const BASE_URL = 'https://webapp.ambitiouswave-fa8284ee.canadacentral.azurecontainerapps.io/';
+
+test.use({ baseURL: BASE_URL });
+
 test('Remove item from cart', async ({ page }) => {
   await page.goto('/');
   await expect(page.getByRole('heading', { name: 'Ready for a new adventure?' })).toBeVisible();

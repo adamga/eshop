@@ -1,4 +1,9 @@
 import { test as setup, expect } from '@playwright/test';
+
+const BASE_URL = 'https://webapp.ambitiouswave-fa8284ee.canadacentral.azurecontainerapps.io/';
+
+setup.use({ baseURL: BASE_URL });
+
 import { STORAGE_STATE } from '../playwright.config';
 import { assert } from 'console';
 

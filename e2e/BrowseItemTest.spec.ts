@@ -1,5 +1,9 @@
 import { test, expect } from '@playwright/test';
 
+const BASE_URL = 'https://webapp.ambitiouswave-fa8284ee.canadacentral.azurecontainerapps.io/';
+
+test.use({ baseURL: BASE_URL });
+
 test('Browse Items', async ({ page }) => {
   await page.goto('/');
 

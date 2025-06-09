@@ -46,6 +46,11 @@ export default defineConfig({
     {
       name: 'e2e tests without logged in',
       testMatch: ['**/BrowseItemTest.spec.ts'],
+    },
+    {
+      name: 'all e2e',
+      testDir: './e2e',
+      use: { ...devices['Desktop Chrome'] },
     }
     // {
     //   name: 'chromium',
@@ -84,12 +89,12 @@ export default defineConfig({
   ],
 
   /* Run your local dev server before starting the tests */
-  webServer: {
-    command: 'dotnet run --project src/eShop.AppHost/eShop.AppHost.csproj',
-    url: 'http://localhost:5045',
-    reuseExistingServer: !process.env.CI,
-    stderr: 'pipe',
-    stdout: 'pipe',
-    timeout: process.env.CI ? (5 * 60_000) : 60_000,
-  },
+  // webServer: {
+  //   command: 'dotnet run --project src/eShop.AppHost/eShop.AppHost.csproj',
+  //   url: 'http://localhost:5045',
+  //   reuseExistingServer: !process.env.CI,
+  //   stderr: 'pipe',
+  //   stdout: 'pipe',
+  //   timeout: process.env.CI ? (5 * 60_000) : 60_000,
+  // },
 });
