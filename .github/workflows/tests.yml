@@ -1,0 +1,117 @@
+name: Run All Tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  dotnet-tests:
+    runs-on: ubuntu-latest
+    name: .NET Tests
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        global-json-file: global.json
+        
+    - name: Restore dependencies
+      run: dotnet restore
+      
+    - name: Build solution
+      run: dotnet build --no-restore
+      
+    - name: Run Unit Tests
+      run: |
+        dotnet test tests/Basket.UnitTests/Basket.UnitTests.csproj --no-build --logger "trx;LogFileName=basket-unit-tests.trx" --collect:"XPlat Code Coverage"
+        dotnet test tests/Ordering.UnitTests/Ordering.UnitTests.csproj --no-build --logger "trx;LogFileName=ordering-unit-tests.trx" --collect:"XPlat Code Coverage"
+        dotnet test tests/ClientApp.UnitTests/ClientApp.UnitTests.csproj --no-build --logger "trx;LogFileName=clientapp-unit-tests.trx" --collect:"XPlat Code Coverage"
+        
+    - name: Run Functional Tests
+      run: |
+        dotnet test tests/Catalog.FunctionalTests/Catalog.FunctionalTests.csproj --no-build --logger "trx;LogFileName=catalog-functional-tests.trx" --collect:"XPlat Code Coverage"
+        dotnet test tests/Ordering.FunctionalTests/Ordering.FunctionalTests.csproj --no-build --logger "trx;LogFileName=ordering-functional-tests.trx" --collect:"XPlat Code Coverage"
+        
+    - name: Publish Test Results
+      uses: dorny/test-reporter@v1
+      if: always()
+      with:
+        name: .NET Test Results
+        path: '**/*.trx'
+        reporter: dotnet-trx
+        fail-on-error: true
+
+  e2e-tests:
+    runs-on: ubuntu-latest
+    name: E2E Tests
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        global-json-file: global.json
+        
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        
+    - name: Install dependencies
+      run: |
+        dotnet restore
+        npm ci
+        
+    - name: Build solution
+      run: dotnet build --no-restore
+      
+    - name: Install Playwright browsers
+      run: npx playwright install --with-deps
+      
+    - name: Setup Docker
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y docker.io
+        sudo systemctl start docker
+        sudo usermod -aG docker $USER
+        
+    - name: Start application with containers
+      run: |
+        dotnet run --project src/eShop.AppHost/eShop.AppHost.csproj &
+        echo "APP_PID=$!" >> $GITHUB_ENV
+        
+    - name: Wait for application to start
+      run: |
+        echo "Waiting for application to start..."
+        timeout 300 bash -c 'until curl -f -s http://localhost:5045 > /dev/null 2>&1; do echo "Waiting..."; sleep 10; done'
+        echo "Application started successfully"
+        
+    - name: Run Playwright tests
+      env:
+        USERNAME1: "test@example.com"
+        PASSWORD: "Pass123$"
+      run: npx playwright test
+      
+    - name: Stop application
+      if: always()
+      run: |
+        if [ ! -z "$APP_PID" ]; then
+          kill $APP_PID || true
+        fi
+        # Clean up any docker containers
+        docker ps -q | xargs -r docker stop || true
+        
+    - name: Upload Playwright report
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: playwright-report
+        path: playwright-report/
+        retention-days: 30
