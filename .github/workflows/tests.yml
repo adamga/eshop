@@ -69,30 +69,66 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
       
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        global-json-file: global.json
+        
     - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
         node-version: '18'
         
+    - name: Setup Docker
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y docker.io
+        sudo systemctl start docker
+        sudo usermod -aG docker $USER
+        
     - name: Install dependencies
-      run: npm ci
+      run: |
+        dotnet restore
+        npm ci
+        
+    - name: Build solution
+      run: dotnet build --no-restore
       
     - name: Install Playwright browsers
       run: npx playwright install --with-deps
       
-    - name: Check E2E Test Configuration
+    - name: Start application
       run: |
-        echo "E2E tests are currently configured to run against a remote environment."
-        echo "To run E2E tests locally, the test files need to be updated to use localhost."
-        echo "Skipping E2E tests for now. Future enhancement: configure tests for local execution."
-        echo "Current test files:"
-        ls -la e2e/
+        dotnet run --project src/eShop.AppHost/eShop.AppHost.csproj &
+        echo "APP_PID=$!" >> $GITHUB_ENV
         
-    - name: Validate Playwright Configuration
+    - name: Wait for application to start
       run: |
-        echo "Validating Playwright configuration..."
-        npx playwright show-trace --help > /dev/null 2>&1 && echo "✓ Playwright installation is valid" || echo "✗ Playwright installation issue"
+        echo "Waiting for application to start..."
+        timeout 300 bash -c 'until curl -f -s http://localhost:5045 > /dev/null 2>&1; do echo "Waiting..."; sleep 10; done'
+        echo "Application started successfully"
         
-    # Future enhancement: Enable when tests are configured for local execution
-    # - name: Run Playwright tests
-    #   run: npx playwright test
+    - name: Run Local E2E Tests
+      env:
+        USERNAME1: "test@example.com"
+        PASSWORD: "Pass123$"
+      run: |
+        echo "Running e2e tests configured for local execution..."
+        npx playwright test e2e/BrowseItemTest.spec.local.ts
+        
+    - name: Stop application
+      if: always()
+      run: |
+        if [ ! -z "$APP_PID" ]; then
+          kill $APP_PID || true
+        fi
+        # Clean up any docker containers
+        docker ps -q | xargs -r docker stop || true
+        
+    - name: Upload Playwright report
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: playwright-report
+        path: playwright-report/
+        retention-days: 30
