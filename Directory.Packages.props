@@ -12,6 +12,8 @@
     <ApiVersioningVersion>8.1.0</ApiVersioningVersion>
   </PropertyGroup>
   <ItemGroup>
+    <!-- Test packages for AccessibilityTests -->
+    <PackageVersion Include="coverlet.collector" Version="6.0.2" />
     <!-- Version together with Aspire -->
     <PackageVersion Include="Aspire.Hosting.AppHost" Version="$(AspireVersion)" />
     <PackageVersion Include="Aspire.Hosting.Azure.CognitiveServices" Version="$(AspireVersion)" />
@@ -103,5 +105,9 @@
     <PackageVersion Include="Yarp.ReverseProxy" Version="2.3.0" />
     <PackageVersion Include="IdentityModel" Version="7.0.0" />
     <PackageVersion Include="Scalar.AspNetCore" Version="2.0.26"/>
+    <!-- Selenium for AccessibilityTests -->
+    <PackageVersion Include="Selenium.WebDriver" Version="4.18.1" />
+    <PackageVersion Include="Selenium.WebDriver.ChromeDriver" Version="138.0.7204.9400" />
+    <PackageVersion Include="Selenium.Support" Version="4.18.1" />
   </ItemGroup>
 </Project>
