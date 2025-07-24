@@ -1,4 +1,32 @@
-﻿using eShop.Ordering.API.Application.IntegrationEvents;
+﻿/**
+ * NewOrderCommandHandlerTest.cs
+ * 
+ * Test Purpose:
+ * This test class validates the functionality of the NewOrderRequestHandler (CreateOrderCommandHandler)
+ * in the eShop Ordering domain. It tests the complete order creation workflow including validation,
+ * domain logic execution, data persistence, and integration event publishing.
+ * 
+ * How the Test Works:
+ * 1. Uses MSTest framework with comprehensive mock dependencies setup in the constructor:
+ *    - IOrderRepository (mocked): Handles order data persistence and retrieval
+ *    - IIdentityService (mocked): Manages user identity and authentication context
+ *    - IMediator (mocked): Enables CQRS pattern for command/query separation
+ *    - IOrderingIntegrationEventService (mocked): Publishes integration events to other bounded contexts
+ * 2. Uses NSubstitute for creating mock objects to isolate the command handler under test
+ * 3. Tests various aspects of new order creation:
+ *    - Order validation and business rule enforcement
+ *    - Proper order aggregate creation with required data
+ *    - Repository interaction for order persistence
+ *    - Integration event publishing for order created events
+ *    - Error handling for invalid order scenarios
+ * 4. Validates the complete order creation pipeline from command input to successful persistence
+ * 5. Ensures proper separation of concerns between domain logic, data access, and integration
+ * 
+ * These tests are essential for ensuring the order creation process works correctly, maintains
+ * business rules, and properly integrates with other parts of the eShop system through events,
+ * which is critical for the core e-commerce functionality.
+ */
+using eShop.Ordering.API.Application.IntegrationEvents;
 using eShop.Ordering.Domain.AggregatesModel.OrderAggregate;
 
 namespace eShop.Ordering.UnitTests.Application;

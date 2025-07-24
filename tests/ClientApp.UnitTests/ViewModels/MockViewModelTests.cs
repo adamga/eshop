@@ -1,4 +1,36 @@
-﻿using ClientApp.UnitTests.Mocks;
+﻿/**
+ * MockViewModelTests.cs
+ * 
+ * Test Purpose:
+ * This test class validates the functionality of the MockViewModel in the eShop client application.
+ * It comprehensively tests form validation patterns, property change notifications, and data binding
+ * behaviors using a mock view model that represents typical MVVM validation scenarios with Forename
+ * and Surname properties.
+ * 
+ * How the Test Works:
+ * 1. Uses MSTest framework with MockNavigationService dependency injection in the constructor
+ * 2. Tests are organized into validation and property change notification categories:
+ *    a) Validation Logic Tests:
+ *       - CheckValidationFailsWhenPropertiesAreEmptyTest: Validates that empty properties fail validation
+ *         and produce appropriate error collections for both Forename and Surname
+ *       - CheckValidationFailsWhenOnlyForenameHasDataTest: Tests partial validation where only one
+ *         field is filled, ensuring individual field validation works correctly
+ *       - CheckValidationPassesWhenOnlySurnameHasDataTest: Tests the opposite partial validation scenario
+ *       - CheckValidationPassesWhenBothPropertiesHaveDataTest: Validates that complete data passes
+ *         validation with no errors in error collections
+ *    b) Property Change Notification Tests:
+ *       - SettingForenamePropertyShouldRaisePropertyChanged: Validates INotifyPropertyChanged implementation
+ *         for the Forename property to ensure proper data binding
+ *       - SettingSurnamePropertyShouldRaisePropertyChanged: Validates INotifyPropertyChanged implementation
+ *         for the Surname property
+ * 3. Each test validates multiple aspects: property values, validation states, error collections, and event firing
+ * 4. Uses property change event handlers to verify MVVM binding patterns work correctly
+ * 
+ * These tests ensure the MockViewModel properly demonstrates and validates common MVVM patterns including
+ * validation logic, error handling, and property change notifications that are fundamental to form-based
+ * user interfaces in the eShop client application.
+ */
+using ClientApp.UnitTests.Mocks;
 
 namespace ClientApp.UnitTests.ViewModels;
 
