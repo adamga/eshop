@@ -1,4 +1,35 @@
-﻿namespace eShop.Ordering.UnitTests.Domain;
+﻿/**
+ * OrderAggregateTest.cs
+ * 
+ * Test Purpose:
+ * This test class validates the functionality of the Order aggregate in the eShop Ordering domain.
+ * It comprehensively tests order creation, order item management, business rule enforcement, and
+ * domain event handling for the core ordering functionality in the eShop system.
+ * 
+ * How the Test Works:
+ * 1. Uses MSTest framework with [TestClass] and [TestMethod] attributes for test organization
+ * 2. Tests multiple aspects of the Order aggregate and OrderItem entities:
+ *    a) Order Item Creation and Validation:
+ *       - Create_order_item_success: Tests successful OrderItem creation with valid parameters
+ *       - Invalid_number_of_units: Validates that negative unit quantities throw OrderingDomainException
+ *       - Invalid_total_of_order_item_lower_than_discount_applied: Ensures discount cannot exceed item value
+ *       - Invalid_discount_setting: Tests that negative discounts are rejected
+ *       - Invalid_units_setting: Validates that adding negative units throws exceptions
+ *    b) Order Business Logic:
+ *       - when_add_two_times_on_the_same_item_then_the_total_of_order_should_be_the_sum_of_the_two_items:
+ *         Tests order total calculation when same item is added multiple times
+ *    c) Domain Events Testing:
+ *       - Add_new_Order_raises_new_event: Validates that order creation triggers domain events
+ *       - Add_event_Order_explicitly_raises_new_event: Tests explicit domain event addition
+ *       - Remove_event_Order_explicitly: Validates domain event removal functionality
+ * 3. Uses builder patterns (OrderBuilder, AddressBuilder) for test data setup
+ * 4. Validates business rules using Assert.ThrowsException for domain exceptions
+ * 5. Tests both successful scenarios and failure cases to ensure robust error handling
+ * 
+ * These tests ensure the Order aggregate maintains business invariants, handles domain events
+ * correctly, and enforces business rules essential for reliable order processing in the eShop system.
+ */
+namespace eShop.Ordering.UnitTests.Domain;
 
 using eShop.Ordering.Domain.AggregatesModel.OrderAggregate;
 using eShop.Ordering.UnitTests.Domain;

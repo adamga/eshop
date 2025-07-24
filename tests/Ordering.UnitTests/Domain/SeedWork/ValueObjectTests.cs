@@ -1,4 +1,35 @@
-﻿namespace eShop.Ordering.UnitTests.Domain.SeedWork;
+﻿/**
+ * ValueObjectTests.cs
+ * 
+ * Test Purpose:
+ * This test class validates the functionality of the ValueObject base class in the eShop Ordering domain.
+ * ValueObjects are fundamental DDD (Domain-Driven Design) building blocks that represent concepts identified
+ * by their attributes rather than identity. This test ensures proper equality, comparison, and immutability
+ * behaviors for value objects used throughout the ordering domain.
+ * 
+ * How the Test Works:
+ * 1. Uses MSTest framework with data-driven testing using [DynamicData] attributes
+ * 2. Tests various aspects of value object behavior:
+ *    - Equals_EqualValueObjects_ReturnsTrue: Tests equality comparison between equivalent value objects
+ *      - Uses DynamicData from EqualValueObjects method to provide test cases
+ *      - Validates that value objects with same attribute values are considered equal
+ *      - Uses EqualityComparer<ValueObject>.Default for consistent equality semantics
+ *    - Additional tests likely cover:
+ *      - Inequality testing for different value objects
+ *      - Hash code consistency for equal objects
+ *      - Immutability verification
+ *      - Null handling and edge cases
+ * 3. Provides comprehensive test coverage through dynamic data sources that can include:
+ *    - Address value objects with same/different properties
+ *    - Money value objects with same/different amounts and currencies
+ *    - Other domain-specific value objects used in ordering
+ * 4. Validates the fundamental behavior that value objects with the same attributes are equal
+ * 
+ * These tests are crucial for ensuring that value objects behave correctly throughout the domain,
+ * maintaining proper equality semantics, hash code consistency, and immutability, which are
+ * essential for reliable domain modeling and business logic in the eShop ordering system.
+ */
+namespace eShop.Ordering.UnitTests.Domain.SeedWork;
 
 public class ValueObjectTests
 {

@@ -1,4 +1,34 @@
-﻿namespace eShop.Ordering.UnitTests.Domain;
+﻿/**
+ * BuyerAggregateTest.cs
+ * 
+ * Test Purpose:
+ * This test class validates the functionality of the Buyer aggregate in the eShop Ordering domain.
+ * It tests the creation, behavior, and business rules of the Buyer entity, which represents customers
+ * who place orders in the eShop system, including their payment methods and identity information.
+ * 
+ * How the Test Works:
+ * 1. Uses MSTest framework with [TestClass] and [TestMethod] attributes for test organization
+ * 2. Contains domain-focused unit tests that validate:
+ *    - Buyer entity creation and initialization
+ *    - Business rule enforcement for buyer operations
+ *    - Payment method management and validation
+ *    - Identity and name handling for buyer entities
+ * 3. Example test Create_buyer_item_success:
+ *    - Arranges test data with a GUID-based identity and fake user name
+ *    - Acts by creating a new Buyer instance with the test data
+ *    - Asserts that the buyer was created successfully (not null)
+ * 4. Additional tests likely cover scenarios such as:
+ *    - Adding and managing payment methods
+ *    - Validating buyer information requirements
+ *    - Testing business rule violations and exception handling
+ *    - Verifying aggregate consistency and invariants
+ * 5. Focuses on pure domain logic without external dependencies
+ * 
+ * These tests ensure the Buyer aggregate maintains its business invariants and behaves correctly
+ * according to domain rules, which is essential for maintaining data consistency and business
+ * logic integrity in the eShop ordering system.
+ */
+namespace eShop.Ordering.UnitTests.Domain;
 
 [TestClass]
 public class BuyerAggregateTest

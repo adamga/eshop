@@ -1,4 +1,29 @@
-﻿namespace eShop.Ordering.UnitTests.Application;
+﻿/**
+ * IdentifiedCommandHandlerTest.cs
+ * 
+ * Test Purpose:
+ * This test class validates the functionality of the IdentifiedCommandHandler in the eShop Ordering domain.
+ * The IdentifiedCommandHandler implements idempotency patterns to ensure that duplicate command requests
+ * (with the same identifier) are handled correctly and don't result in duplicate operations.
+ * 
+ * How the Test Works:
+ * 1. Uses MSTest framework with mock dependencies setup in the constructor:
+ *    - IRequestManager (mocked): Manages request tracking and idempotency checking
+ *    - IMediator (mocked): Handles command dispatching and CQRS pattern implementation
+ *    - ILogger (mocked): Provides logging functionality for the handler
+ * 2. Uses NSubstitute for creating mock objects to isolate the handler under test
+ * 3. Tests various scenarios for command handling:
+ *    - Handler_sends_command_when_order_no_exists: Validates that new commands are processed
+ *      when no previous request with the same identifier exists
+ *    - Additional tests likely validate duplicate request handling and idempotency behavior
+ * 4. Focuses on the IdentifiedCommandHandler specifically for CreateOrderCommand operations
+ * 5. Ensures proper integration between request management and command mediation
+ * 
+ * These tests are critical for ensuring that the ordering system maintains data consistency
+ * and prevents duplicate orders when the same command is sent multiple times, which is
+ * essential for reliable e-commerce operations and maintaining customer trust.
+ */
+namespace eShop.Ordering.UnitTests.Application;
 
 [TestClass]
 public class IdentifiedCommandHandlerTest

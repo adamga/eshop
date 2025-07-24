@@ -1,4 +1,35 @@
-﻿namespace eShop.Ordering.UnitTests.Application;
+﻿/**
+ * OrdersWebApiTest.cs
+ * 
+ * Test Purpose:
+ * This test class validates the functionality of the OrderServices Web API endpoints in the eShop
+ * Ordering system. It tests the HTTP API layer that exposes order management operations, including
+ * order queries, command processing, and API response handling.
+ * 
+ * How the Test Works:
+ * 1. Uses MSTest framework with comprehensive mock dependencies setup in the constructor:
+ *    - IMediator (mocked): Handles command and query dispatching using CQRS pattern
+ *    - IOrderQueries (mocked): Manages read-side queries for order data retrieval
+ *    - IIdentityService (mocked): Provides user identity and authorization context
+ *    - ILogger<OrderServices> (mocked): Provides logging functionality for the API
+ * 2. Uses NSubstitute for creating mock objects to isolate the Web API layer under test
+ * 3. Tests various API endpoint scenarios:
+ *    - Order retrieval endpoints (GET operations)
+ *    - Order creation and update endpoints (POST/PUT operations)
+ *    - Order status and history queries
+ *    - Error handling and HTTP status code responses
+ *    - Authentication and authorization validation
+ * 4. Validates proper HTTP response types including:
+ *    - Success responses (200 OK, 201 Created)
+ *    - Error responses (400 Bad Request, 404 Not Found, 500 Internal Server Error)
+ *    - Proper content serialization and response formats
+ * 5. Ensures proper integration between Web API layer and application services
+ * 
+ * These tests are crucial for ensuring the Orders Web API correctly exposes ordering functionality
+ * through HTTP endpoints, handles requests and responses properly, and maintains proper separation
+ * between the API layer and business logic in the eShop ordering system.
+ */
+namespace eShop.Ordering.UnitTests.Application;
 
 using Microsoft.AspNetCore.Http.HttpResults;
 using eShop.Ordering.API.Application.Queries;

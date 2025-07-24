@@ -1,4 +1,29 @@
-﻿using System.Net.Http.Json;
+﻿/**
+ * CatalogApiTests.cs
+ * 
+ * Test Purpose:
+ * This test class performs functional/integration testing of the Catalog API endpoints in the eShop
+ * application. It validates the complete HTTP API functionality including request/response handling,
+ * API versioning, and data serialization for catalog-related operations.
+ * 
+ * How the Test Works:
+ * 1. Uses ASP.NET Core's WebApplicationFactory for integration testing with a real HTTP server
+ * 2. Implements IClassFixture<CatalogApiFixture> to share test setup across multiple test methods
+ * 3. Configures JSON serialization options for proper API response handling
+ * 4. Creates versioned HTTP clients to test different API versions using Asp.Versioning framework
+ * 5. Tests various catalog endpoints such as:
+ *    - Product retrieval and listing
+ *    - Category management
+ *    - Search functionality
+ *    - API versioning compliance
+ * 6. Validates HTTP status codes, response headers, and JSON response content
+ * 7. Uses CatalogApiFixture for consistent test environment setup and teardown
+ * 
+ * These functional tests ensure the Catalog API works correctly in a near-production environment,
+ * validating the complete request/response pipeline including routing, model binding, business logic,
+ * and data access layers.
+ */
+using System.Net.Http.Json;
 using System.Text.Json;
 using Asp.Versioning;
 using Asp.Versioning.Http;

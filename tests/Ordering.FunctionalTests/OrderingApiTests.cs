@@ -1,4 +1,35 @@
-﻿using System.Net;
+﻿/**
+ * OrderingApiTests.cs
+ * 
+ * Test Purpose:
+ * This test class performs functional/integration testing of the Ordering API endpoints in the eShop
+ * application. It validates the complete HTTP API functionality for order management operations including
+ * order creation, retrieval, status updates, and API versioning compliance.
+ * 
+ * How the Test Works:
+ * 1. Uses ASP.NET Core's WebApplicationFactory for integration testing with a real HTTP server environment
+ * 2. Implements IClassFixture<OrderingApiFixture> to share test setup and ensure consistent test environment
+ * 3. Configures API versioning in the constructor:
+ *    - Sets up ApiVersionHandler with QueryStringApiVersionWriter for version 1.0
+ *    - Creates an HTTP client with proper version handling for API requests
+ * 4. Tests various ordering endpoints including:
+ *    - Order creation (CreateOrderCommand processing)
+ *    - Order retrieval and querying (order details, order history)
+ *    - Order status management and updates
+ *    - Payment and shipping status tracking
+ *    - API versioning and backward compatibility
+ * 5. Validates HTTP responses including:
+ *    - Status codes (200, 201, 400, 404, etc.)
+ *    - Response headers and content types
+ *    - JSON serialization/deserialization of order models
+ *    - Error handling and validation responses
+ * 6. Uses OrderingApiFixture for consistent database and service setup across tests
+ * 
+ * These functional tests ensure the Ordering API works correctly in a near-production environment,
+ * validating the complete request/response pipeline including routing, authentication, business logic,
+ * data persistence, and integration with other eShop services.
+ */
+using System.Net;
 using System.Text;
 using System.Text.Json;
 using Asp.Versioning;
