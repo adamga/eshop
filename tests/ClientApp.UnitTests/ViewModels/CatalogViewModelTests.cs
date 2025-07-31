@@ -1,4 +1,36 @@
-﻿using ClientApp.UnitTests.Mocks;
+﻿/**
+ * CatalogViewModelTests.cs
+ * 
+ * Test Purpose:
+ * This test class validates the functionality of the CatalogViewModel in the eShop client application.
+ * It comprehensively tests the catalog browsing interface including product listing, filtering by brands
+ * and types, command initialization, property initialization states, and data binding behaviors.
+ * 
+ * How the Test Works:
+ * 1. Uses MSTest framework with extensive mock service setup in the constructor:
+ *    - Creates mock instances for all required services (Navigation, Basket, Catalog, Order, Identity)
+ *    - Initializes AppEnvironmentService with all mock dependencies for isolated testing
+ *    - Configures the environment service for testing mode
+ * 2. Tests are organized into several categories:
+ *    a) Command Initialization Tests:
+ *       - FilterCommand and ClearFilterCommand are properly initialized and not null
+ *    b) Initial State Tests:
+ *       - Products, Brands, Types collections are empty on instantiation
+ *       - SelectedBrand, SelectedType are null initially
+ *       - IsFiltering property is false by default
+ *    c) Post-Initialization Tests:
+ *       - After InitializeAsync(), Products, Brands, Types are populated (not null)
+ *    d) Property Change Notification Tests:
+ *       - BadgeCount property raises PropertyChanged events correctly
+ *    e) Command Behavior Tests:
+ *       - ClearFilterCommand properly resets filter selections and maintains product collection
+ * 3. Uses async/await patterns to test asynchronous initialization and command execution
+ * 4. Validates MVVM property change notification patterns using PropertyChanged events
+ * 
+ * These tests ensure the CatalogViewModel properly manages catalog data, filtering states, and
+ * user interactions for the product browsing experience in the eShop client application.
+ */
+using ClientApp.UnitTests.Mocks;
 using eShop.ClientApp.Services.Identity;
 
 namespace ClientApp.UnitTests.ViewModels;

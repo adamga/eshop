@@ -1,4 +1,26 @@
-﻿using System.Security.Claims;
+﻿/**
+ * BasketServiceTests.cs
+ * 
+ * Test Purpose:
+ * This test class validates the functionality of the BasketService, which handles shopping basket
+ * operations in the eShop.Basket.API. It tests various scenarios for retrieving and managing
+ * customer baskets through the gRPC service interface.
+ * 
+ * How the Test Works:
+ * 1. Uses MSTest framework with [TestClass] and [TestMethod] attributes
+ * 2. Creates mock instances of IBasketRepository using NSubstitute for isolated unit testing
+ * 3. Tests three main scenarios:
+ *    - GetBasketReturnsEmptyForNoUser: Validates that requests without user context return empty baskets
+ *    - GetBasketReturnsItemsForValidUserId: Verifies that valid authenticated users receive their basket items
+ *    - GetBasketReturnsEmptyForInvalidUserId: Ensures that users with invalid/missing IDs get empty baskets
+ * 4. Uses TestServerCallContext to simulate gRPC call contexts with various authentication states
+ * 5. Mocks HttpContext and ClaimsPrincipal to test different user authentication scenarios
+ * 6. Validates responses using Assert methods to ensure correct CustomerBasketResponse behavior
+ * 
+ * These tests ensure the BasketService properly handles authentication, authorization, and basket
+ * retrieval logic while maintaining security and data isolation between users.
+ */
+using System.Security.Claims;
 using eShop.Basket.API.Repositories;
 using eShop.Basket.API.Grpc;
 using eShop.Basket.API.Model;
